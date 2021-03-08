@@ -17,7 +17,7 @@ def extract_block(block_obj):
     vary_on = []
     if isinstance(block_obj.block, StructBlock):
         tmp_dict = {}
-        for k, v in block_obj.value.bound_blocks.items():
+        for k, v in block_obj.bound_blocks.items():
             tmp_dict[k] = extract_block(v)
         vary_on.append({block_obj.block.name: tmp_dict})
     elif isinstance(block_obj.block, StreamBlock):
